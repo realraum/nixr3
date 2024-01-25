@@ -1,5 +1,7 @@
 { inputs, config, pkgs, lib, ... }:
 
+with lib;
+
 {
   nixpkgs = {
     # You can add overlays here
@@ -27,7 +29,9 @@
         # gebi
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILazlApx8QjprxmwHLNGGV0NIYsElzDrFocfvLfV6pVs gebi@realraum"
         # mkg
-        "sh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIBBEhZ7sLQCNZXBunHMxEDS2Niy3wpnHgUPDBCNeKew maciej@mkg-razer"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIBBEhZ7sLQCNZXBunHMxEDS2Niy3wpnHgUPDBCNeKew maciej@mkg-razer"
+        # xro
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVU78kh0cC0uHMnWeJnbOpNVoHD+8/b162laGytaCnr xro@realraum.at"
       ];
     };
   };
@@ -38,7 +42,7 @@
     enable = true;
     settings = {
       # Forbid root login through SSH.
-      PermitRootLogin = "without-password";
+      PermitRootLogin = mkForce "without-password";
       # Use keys only. Remove if you want to SSH using password (not recommended)
       PasswordAuthentication = false;
     };
@@ -90,4 +94,6 @@
       hide_userland_threads = true;
     };
   };
+
+  programs.mtr.enable = true;
 }
