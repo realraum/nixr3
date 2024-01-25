@@ -5,11 +5,14 @@ with lib;
 {
   imports =
     [ # Include the results of the hardware scan.
-      "${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix"
       ../modules/common.nix
+# ref: https://github.com/cyber-murmel/nixos-rpi-zero-w
+	./rpi-zero-w.nix
+	./sd-image.nix
+
     ];
 
-  nixpkgs.hostPlatform = "aarch64-linux";
+  # nixpkgs.hostPlatform = "aarch64-linux";
 
   networking.hostName = "prusa-pi"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
