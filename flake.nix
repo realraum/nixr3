@@ -8,6 +8,9 @@
     # TODO: Add any other flake you might need
     hardware.url = "github:nixos/nixos-hardware";
 
+    mkg-mod.url = "github:mkg20001/mkg-mod/master";
+    mkg-mod.inputs.nixpkgs.follows = "nixpkgs";
+
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
@@ -16,6 +19,7 @@
   outputs = {
     self,
     nixpkgs,
+    mkg-mod,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -27,6 +31,15 @@
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
         modules = [./iot/configuration.nix];
+      };
+
+      misc = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [
+          mkg-mod.nixosModules.yggdrasil
+          ./misc/configuration.nix
+        ];
       };
 
       prusa-pi = nixpkgs.lib.nixosSystem {
