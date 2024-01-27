@@ -3,6 +3,10 @@
 with lib;
 
 {
+  imports = [
+    ./vm-fix.nix
+  ];
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
