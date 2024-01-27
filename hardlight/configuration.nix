@@ -33,7 +33,30 @@ with lib;
   # List services that you want to enable:
   zramSwap.enable = true;
 
-  
+  services.golightctrl = {
+    enable = true;
+    settings = {
+      GOLIGHTCTRL_MQTTBROKER="tcp://mqtt.realraum.at:1883";
+      GOLIGHTCTRL_RF433TTYDEV="/dev/ttyRF433";
+      GOLIGHTCTRL_BUTTONTTYDEV="/dev/ttyButtons";
+    };
+  };
+
+
+  services.udev.extraRules = ''
+  ## teensy rules and device names
+  ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789]?", ENV{ID_MM_DEVICE_IGNORE}="1"
+  ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789]?", ENV{MTP_NO_PROBE}="1"
+  SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789]?", MODE:="0666"
+  KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789]?", ATTRS{idUsbInterfaceNum}=="00", SYMLINK+="ttyRF433", MODE:="0666"
+  KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789]?", ATTRS{idUsbInterfaceNum}=="02", SYMLINK+="ttyButtons", MODE:="0666"
+
+  ## gpio permissions
+  ### TODO: see https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi_4#Using_GPIO_pins_as_non_root
+  SUBSYSTEM=="gpio*", PROGRAM="/bin/sh -c 'chown -R root:gpio /sys/class/gpio && chmod -R 770 /sys/class/gpio; chown -R root:gpio /sys/devices/virtual/gpio && chmod -R 770 /sys/devices/virtual/gpio; chown -R root:gpio /sys/devices/platform/soc/*.gpio/gpio && chmod -R 770 /sys/devices/platform/soc/*.gpio/gpio'"
+  SUBSYSTEM=="bcm2835-gpiomem", GROUP="gpio", MODE="0660"
+  '';
+
   networking = let 
     raspiIF = "enu1u1u1";
     in 
