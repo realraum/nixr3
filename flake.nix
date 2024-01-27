@@ -11,6 +11,9 @@
     grical-to-mob.url = "github:realraum/grical-to-mobilizon";
     grical-to-mob.inputs.nixpkgs.follows = "nixpkgs";
 
+    deckenlichtschalter.url = "github:realraum/deckenlichtschalter";
+    deckenlichtschalter.inputs.nixpkgs.follows = "nixpkgs";
+
     mkg-mod.url = "github:mkg20001/mkg-mod/master";
     mkg-mod.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -24,6 +27,7 @@
     nixpkgs,
     grical-to-mob,
     mkg-mod,
+    deckenlichtschalter,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -52,7 +56,9 @@
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
         modules = [
+          ({ nixpkgs.overlays = [ deckenlichtschalter.overlays.default ]; })
           mkg-mod.nixosModules.yggdrasil
+          deckenlichtschalter.nixosModules.golightctrl
           ./hardlight/configuration.nix
         ];
       };
