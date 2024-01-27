@@ -9,6 +9,8 @@ with lib;
       ../modules/common.nix
     ];
 
+  services.grical-to-mob.enable = true;
+
   nixpkgs.hostPlatform = "aarch64-linux";
 
   networking.hostName = "r3-misc"; # Define your hostname.

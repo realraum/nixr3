@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "grical-to-mob": {
+      "inputs": {
+        "nix-node-package": "nix-node-package",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1706370593,
+        "narHash": "sha256-nMhmCZ05pRylHqCWAQ/MlqEEyo8h/iQ0KGaduwwJEjs=",
+        "owner": "realraum",
+        "repo": "grical-to-mobilizon",
+        "rev": "57f57a7fbfaec9fac869f510f7dfa651638db757",
+        "type": "github"
+      },
+      "original": {
+        "owner": "realraum",
+        "repo": "grical-to-mobilizon",
+        "type": "github"
+      }
+    },
     "hardware": {
       "locked": {
         "lastModified": 1706182238,
@@ -36,13 +57,29 @@
         "type": "github"
       }
     },
+    "nix-node-package": {
+      "locked": {
+        "lastModified": 1706303050,
+        "narHash": "sha256-LCELgjzunxEsZQNRYJmVJ6FRVVurEsffed9aB8kPheE=",
+        "owner": "mkg20001",
+        "repo": "nix-node-package",
+        "rev": "90f6ad8de81e3b75c2b0e6e3f9711bb094a5072b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mkg20001",
+        "ref": "master",
+        "repo": "nix-node-package",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1706006310,
-        "narHash": "sha256-nDPz0fj0IFcDhSTlXBU2aixcnGs2Jm4Zcuoj0QtmiXQ=",
+        "lastModified": 1706173671,
+        "narHash": "sha256-lciR7kQUK2FCAYuszyd7zyRRmTaXVeoZsCyK6QFpGdk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b43bb235efeab5324c5e486882ef46749188eee2",
+        "rev": "4fddc9be4eaf195d631333908f2a454b03628ee5",
         "type": "github"
       },
       "original": {
@@ -54,6 +91,7 @@
     },
     "root": {
       "inputs": {
+        "grical-to-mob": "grical-to-mob",
         "hardware": "hardware",
         "mkg-mod": "mkg-mod",
         "nixpkgs": "nixpkgs"

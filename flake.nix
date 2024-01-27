@@ -8,6 +8,9 @@
     # TODO: Add any other flake you might need
     hardware.url = "github:nixos/nixos-hardware";
 
+    grical-to-mob.url = "github:realraum/grical-to-mobilizon";
+    grical-to-mob.inputs.nixpkgs.follows = "nixpkgs";
+
     mkg-mod.url = "github:mkg20001/mkg-mod/master";
     mkg-mod.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -19,6 +22,7 @@
   outputs = {
     self,
     nixpkgs,
+    grical-to-mob,
     mkg-mod,
     ...
   } @ inputs: let
@@ -37,7 +41,9 @@
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
         modules = [
+          ({ nixpkgs.overlays = [ grical-to-mob.overlays.default ]; })
           mkg-mod.nixosModules.yggdrasil
+          grical-to-mob.nixosModules.grical-to-mob
           ./misc/configuration.nix
         ];
       };
