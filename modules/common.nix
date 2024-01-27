@@ -7,6 +7,9 @@ with lib;
     ./vm-fix.nix
   ];
 
+  # hack: is broken
+  services.logrotate.checkConfig = false;
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
