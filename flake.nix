@@ -48,6 +48,15 @@
         ];
       };
 
+      hardlight = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [
+          mkg-mod.nixosModules.yggdrasil
+          ./hardlight/configuration.nix
+        ];
+      };
+
       prusa-pi = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
