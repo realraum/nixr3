@@ -81,4 +81,12 @@ with lib;
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 
+  mkg.mod = {
+    yggdrasil = {
+      enable = true;
+      port = 17858;
+      peers = [ "tcp://ygg.mkg20001.io:80" "tls://ygg.mkg20001.io:443" ];
+    };
+  };
+
 }
