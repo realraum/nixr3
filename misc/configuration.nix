@@ -11,9 +11,8 @@ with lib;
 
   services.grical-to-mob.enable = true;
 
-  nixpkgs.hostPlatform = "x86_64-linux";
-
   networking.hostName = "r3-misc"; # Define your hostname.
+  boot.initrd.systemd.enable = mkForce false;
 
   # Set your time zone.
   time.timeZone = "Europe/Vienna";
@@ -26,7 +25,7 @@ with lib;
   #   useXkbConfig = true; # use xkbOptions in tty.
   # };
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "24.05";
 
   mkg.mod = {
     yggdrasil = {
