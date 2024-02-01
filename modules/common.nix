@@ -39,6 +39,8 @@ with lib;
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIBBEhZ7sLQCNZXBunHMxEDS2Niy3wpnHgUPDBCNeKew maciej@mkg-razer"
         # xro
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVU78kh0cC0uHMnWeJnbOpNVoHD+8/b162laGytaCnr xro@realraum.at"
+        # arrox
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAYxIFF+GzkKYyuULadRxhaNl/nIaG9WMT3HAugQgYHm georg@georg-laptop"
       ];
     };
   };
