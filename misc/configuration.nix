@@ -14,9 +14,6 @@ with lib;
   nixpkgs.hostPlatform = "x86_64-linux";
   networking.hostName = "r3-misc"; # Define your hostname.
 
-  # Set your time zone.
-  time.timeZone = "Europe/Vienna";
-
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
