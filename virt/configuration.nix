@@ -45,4 +45,12 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.11";
+
+  mkg.mod = {
+    yggdrasil = {
+      enable = true;
+      port = 17858;
+      peers = [ "tcp://ygg.mkg20001.io:80" "tls://ygg.mkg20001.io:443" ];
+    };
+  };
 }
