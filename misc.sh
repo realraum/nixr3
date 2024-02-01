@@ -2,4 +2,4 @@
 
 set -euxo pipefail
 
-nixos-rebuild --flake .#misc --build-host $(id -un)@aarch64.mkg20001.io --target-host root@200:37be:29a6:3dea:9366:5bb:773c:9109 switch
+nixos-rebuild --flake .#misc --target-host root@201:54fa:d57c:eb9a:16b4:9ea7:7fa6:7a82 switch
