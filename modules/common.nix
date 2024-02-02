@@ -63,6 +63,9 @@ with lib;
     };
   };
 
+  # Disable sudo as we use root ssh authentication only
+  security.sudo.enable = false;
+
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
