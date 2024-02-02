@@ -24,6 +24,7 @@
   ];
 
   virtualisation.incus.enable = true;
+  services.fwupd.enable = true;
 
   networking.useDHCP = mkForce false;
   networking.interfaces.enp1s0.useDHCP = true;
