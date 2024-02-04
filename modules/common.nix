@@ -65,6 +65,9 @@ with lib;
 
   # Disable sudo as we use root ssh authentication only
   security.sudo.enable = false;
+  # Disable su going root
+  # FIXME: breaks reloading user units for root
+  # security.pam.services.su.rootOK = mkForce false;
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
