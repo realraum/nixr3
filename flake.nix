@@ -3,7 +3,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:mkg20001/nixpkgs/incusui";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # TODO: Add any other flake you might need
     hardware.url = "github:nixos/nixos-hardware";
