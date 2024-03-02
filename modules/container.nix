@@ -17,7 +17,4 @@
   networking.useDHCP = mkForce false;
   # just on eth0
   networking.interfaces.eth0.useDHCP = true;
-
-  # this breaks the os
-  boot.initrd.systemd.enable = mkForce false;
 }

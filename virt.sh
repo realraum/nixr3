@@ -2,4 +2,4 @@
 
 set -euxo pipefail
 
-nixos-rebuild --flake .#virt --target-host root@192.168.69.132 switch
+nixos-rebuild --use-substitutes --flake .#virt --target-host root@r3virt.y.mkg20001.io switch
