@@ -28,7 +28,22 @@
   services.fwupd.enable = true;
 
   networking.useDHCP = mkForce false;
-  networking.interfaces.enp1s0.useDHCP = true;
+  # networking.interfaces.enp1s0.useDHCP = true;
+
+  systemd.network = {
+    enable = true;
+    networks."40-enp1s0" = {
+      matchConfig = {
+        Name = "enp1s0";
+      };
+      gateway = [ "192.168.127.254" ];
+      networkConfig = {
+      };
+      addresses = [
+        { addressConfig = { Address = "192.168.127.250/24"; }; }
+      ];
+    };
+  };
 
   # FIXME: Add the rest of your current configuration
 
@@ -54,5 +69,17 @@
       port = 17858;
       peers = [ "tcp://ygg.mkg20001.io:80" "tls://ygg.mkg20001.io:443" ];
     };
+  };
+
+  networking.firewall.extraForwardRules = "accept";
+  networking.firewall.logRefusedPackets = true;
+  networking.nftables.tables."nat" = {
+    family = "inet";
+    content = ''
+      chain post {
+        type nat hook postrouting priority srcnat; policy accept;
+        iifname "enp1s0" oifname "incusbr0" ip saddr 192.168.0.0/16 snat to 10.34.55.1 comment "from internal interfaces"
+      }
+    '';
   };
 }
