@@ -20,6 +20,7 @@
     ./hardware-configuration.nix
     ../modules/common.nix
     ./incus.nix
+    ./nginx.nix
     #../modules/qemu-base.nix
   ];
 
