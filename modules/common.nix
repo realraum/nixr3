@@ -91,6 +91,9 @@ with lib;
     auto-optimise-store = true;
   };
 
+  nix.gc.automatic = true;
+  nix.gc.options = "--delete-older-than 14d";
+
   # testing future stuff
   networking.useNetworkd = true;
   boot.initrd.systemd.enable = true;
