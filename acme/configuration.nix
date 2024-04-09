@@ -41,7 +41,7 @@ with lib;
     enable = true;
     settings.general.records = [
       "acme-dns.realraum.at. A 89.106.211.59"
-      # "acme-dns.realraum.at. AAAA 2001:db8::1"
+      "acme-dns.realraum.at. AAAA 2a02:3e0:4000:1::59"
       "acme-dns.realraum.at. NS acme-dns.realraum.at."
     ];
 
