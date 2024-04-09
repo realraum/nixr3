@@ -34,6 +34,7 @@ with lib;
     allowedTCPPorts = [ 53 ];
     extraInputRules = ''
       ip saddr { 192.168.0.0/16, 10.0.0.0/8 } tcp dport 80 accept
+      ip6 saddr 2a02:3e0:4000:1::/64 tcp dport 80 accept
     '';
   };
 
