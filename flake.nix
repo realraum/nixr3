@@ -72,6 +72,15 @@
         ];
       };
 
+      acme = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [
+          mkg-mod.nixosModules.yggdrasil
+          ./acme/configuration.nix
+        ];
+      };
+
       website = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
