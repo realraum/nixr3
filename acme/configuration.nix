@@ -23,7 +23,6 @@ with lib;
       networkConfig = {
       };
       addresses = [
-        { addressConfig = { Address = "192.168.127.223/24"; }; }
         { addressConfig = { Address = "89.106.211.59/27"; }; }
       ];
     };
@@ -31,7 +30,10 @@ with lib;
 
   networking.firewall = {
     allowedUDPPorts = [ 53 ];
-    allowedTCPPorts = [ 53 80 ];
+    allowedTCPPorts = [ 53 ];
+    extraInputRules = ''
+      ip saddr { 192.168.0.0/16, 10.0.0.0/8 } tcp dport 80 accept
+    '';
   };
 
   services.acme-dns = {
@@ -48,7 +50,6 @@ with lib;
     # settings.database.engine
     # settings.database.connection
     settings.api.port = 80;
-    settings.api.ip = "192.168.127.223";
     # settings.api.disable_registration
   };
 
