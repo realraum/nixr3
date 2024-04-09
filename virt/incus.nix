@@ -28,6 +28,15 @@ with lib;
       trustedInterfaces = [ "incusbr0" "incusbr1" ];
     };
 
+    systemd.services.ndp-proxy = {
+      wantedBy = [ "multi-user.target" ];
+      after = [ "network.target" ];
+      serviceConfig = {
+        Restart = "always";
+        ExecStart = "${pkgs.callPackage ./ndp {}}/bin/ndp-proxy -i enp1s0 -m 80 -n 2a02:3e0:4000:1:ffaa::";
+      };
+    };
+
     systemd.services.incus = {
       restartIfChanged = false; # do it later
       requires = mkForce ["network-online.target" "incus.socket"];
