@@ -39,11 +39,11 @@
       };
       gateway = [ "192.168.127.254" "2a02:3e0:4000:1::1" ];
       networkConfig = {
-        IPForward = "ipv6";
+        IPv6Forwarding = true;
       };
       addresses = [
-        { addressConfig = { Address = "192.168.127.250/24"; }; }
-        { addressConfig = { Address = "2a02:3e0:4000:1::250/64"; }; }
+        { Address = "192.168.127.250/24"; }
+        { Address = "2a02:3e0:4000:1::250/64"; }
       ];
     };
   };
