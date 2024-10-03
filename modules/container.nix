@@ -4,7 +4,6 @@
   ];
 
   boot.isContainer = true;
-  environment.noXlibs = false;
 
   # networkd
   networking.useNetworkd = mkForce true;

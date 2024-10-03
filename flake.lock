@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1706397983,
-        "narHash": "sha256-x7zV/ocMCR0FM3fCOrTadcTYhx47wTB5LUE9Sb40JdE=",
+        "lastModified": 1713567814,
+        "narHash": "sha256-Ojmvp4RLP45Uv5bLx4hm/HtlzzLxlZ7DWD9MlAaBjhA=",
         "owner": "realraum",
         "repo": "deckenlichtschalter",
-        "rev": "0b09c852727bd81c63e0f7350c6f3979c72843ea",
+        "rev": "0b6f18c61b8714c10a5821e4f4c536c50a58fbea",
         "type": "github"
       },
       "original": {
@@ -43,11 +43,11 @@
     },
     "hardware": {
       "locked": {
-        "lastModified": 1712566108,
-        "narHash": "sha256-c9nT2ZODGqobISP41kUwCQ84Srwg7a/1TmPFQuol2/8=",
+        "lastModified": 1727665282,
+        "narHash": "sha256-oKtfbQB1MBypqIyzkC8QCQcVGOa1soaXaGgcBIoh14o=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "1e3b3a35b7083f4152f5a516798cf9b21e686465",
+        "rev": "11c43c830e533dad1be527ecce379fcf994fbbb5",
         "type": "github"
       },
       "original": {
@@ -95,16 +95,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1712634594,
-        "narHash": "sha256-fzBqUvcJjjyIapioiaW5b/mj7V/xxljDt864JrDC5qI=",
+        "lastModified": 1727802920,
+        "narHash": "sha256-HP89HZOT0ReIbI7IJZJQoJgxvB2Tn28V6XS3MNKnfLs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0dca19054c663a0cf3b471be3c3079acfd623924",
+        "rev": "27e30d177e57d912d614c88c622dcfdb2e6e6515",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixpkgs-unstable",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }

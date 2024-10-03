@@ -13,6 +13,14 @@ with lib;
   nixpkgs.hostPlatform = "x86_64-linux";
   networking.hostName = "r3-website"; # Define your hostname.
 
+  networking.nat = {
+    enable = true;
+    internalInterfaces = ["ve-+"];
+    externalInterface = "ens18";
+    # Lazy IPv6 connectivity for the container
+    enableIPv6 = true;
+  };
+
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
