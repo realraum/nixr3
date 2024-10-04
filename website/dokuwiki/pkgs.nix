@@ -1,18 +1,6 @@
 { pkgs }:
 
 {
-  /* dokuwiki-template-realraum = pkgs.stdenv.mkDerivation rec {
-    name = "realraum";
-    version = "2024-10-03";
-    src = pkgs.fetchFromGitHub {
-      owner = "realraum";
-      repo = "dokuwiki-r3-template";
-      rev = version;
-      sha256 = "sha256-AiPc3l1ncl3ZeTrSwi85YTPVhfMGmJPtFYaZ6djKN+c=";
-    };
-    installPhase = "mkdir -p $out; cp -R * $out/";
-  }; */
-
   dokuwiki-template-bootstrap3 = pkgs.stdenv.mkDerivation rec {
     name = "bootstrap3";
     version = "v2024-02-06";
@@ -143,4 +131,10 @@
     sourceRoot = ".";
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+
+  dokuwiki-with-userstyle = pkgs.dokuwiki.overrideAttrs(prev: {
+    postFixup = prev.postFixup or "" + ''
+      cp ${./userstyle.css} $out/share/dokuwiki/conf/userstyle.css
+    '';
+  });
 }

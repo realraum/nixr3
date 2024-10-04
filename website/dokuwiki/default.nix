@@ -16,16 +16,18 @@ with dokuPkgs;
     allowedTCPPorts = [ 80 ];
   };
 
-	services.dokuwiki.sites."wiki.realraum.at" = {
+  services.dokuwiki.sites."wiki.realraum.at" = {
     enable = true;
-	  templates = [ /*dokuwiki-template-realraum*/ dokuwiki-template-bootstrap3 ];
-	  plugins = [ dokuwiki-plugin-move dokuwiki-plugin-include dokuwiki-plugin-discussion dokuwiki-plugin-pagelist dokuwiki-plugin-tag dokuwiki-plugin-wrap dokuwiki-plugin-multiorphan dokuwiki-plugin-diagram dokuwiki-plugin-icons ];
+    templates = [ dokuwiki-template-bootstrap3 ];
+    plugins = [ dokuwiki-plugin-move dokuwiki-plugin-include dokuwiki-plugin-discussion dokuwiki-plugin-pagelist dokuwiki-plugin-tag dokuwiki-plugin-wrap dokuwiki-plugin-multiorphan dokuwiki-plugin-diagram dokuwiki-plugin-icons ];
+    package = dokuwiki-with-userstyle;
 
     settings = {
       template = "bootstrap3";
       # tpl.mindthedark.autoDark = true;
       userewrite = true;
-      baseurl = "https://realraum.at/wiki/";
+      # baseurl = "https://realraum.at/wiki/";
+      baseurl = "http://wiki.realraum.at";
       useacl = true;
 
       title = "realraum";
