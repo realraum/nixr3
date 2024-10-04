@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  dokuPkgs = import ./pkgs.nix { pkgs };
+  dokuPkgs = import ./pkgs.nix { inherit pkgs; };
 in
 
 with dokuPkgs;
@@ -18,7 +18,7 @@ with dokuPkgs;
 
 	services.dokuwiki.sites."wiki.realraum.at" = {
     enable = true;
-	  templates = [ dokuwiki-template-realraum dokuwiki-template-bootstrap3 ];
+	  templates = [ /*dokuwiki-template-realraum*/ dokuwiki-template-bootstrap3 ];
 	  plugins = [ dokuwiki-plugin-move dokuwiki-plugin-include dokuwiki-plugin-discussion dokuwiki-plugin-pagelist dokuwiki-plugin-tag dokuwiki-plugin-wrap dokuwiki-plugin-multiorphan dokuwiki-plugin-diagram dokuwiki-plugin-icons ];
 
     settings = {

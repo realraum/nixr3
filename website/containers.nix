@@ -1,4 +1,9 @@
+{ inputs, outputs, ... }: let
+  specialArgs = { inherit inputs; inherit outputs; };
+in
 {
+  boot.enableContainers = true;
+
   containers.dokuwiki = {
     autoStart = true;
     privateNetwork = true;
@@ -12,6 +17,7 @@
         isReadOnly = false;
       };
     };
+    specialArgs = specialArgs;
 
     config = ./dokuwiki;
   };

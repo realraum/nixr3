@@ -1,7 +1,7 @@
 { pkgs }:
 
 {
-  dokuwiki-template-realraum = pkgs.stdenv.mkDerivation rec {
+  /* dokuwiki-template-realraum = pkgs.stdenv.mkDerivation rec {
     name = "realraum";
     version = "2024-10-03";
     src = pkgs.fetchFromGitHub {
@@ -11,7 +11,7 @@
       sha256 = "sha256-AiPc3l1ncl3ZeTrSwi85YTPVhfMGmJPtFYaZ6djKN+c=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
-  };
+  }; */
 
   dokuwiki-template-bootstrap3 = pkgs.stdenv.mkDerivation rec {
     name = "bootstrap3";

@@ -8,6 +8,7 @@ with lib;
       ../modules/common.nix
       ../modules/container.nix
       ./nginx.nix
+      ./containers.nix
     ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
