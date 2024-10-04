@@ -41,6 +41,9 @@ with lib;
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVU78kh0cC0uHMnWeJnbOpNVoHD+8/b162laGytaCnr xro@realraum.at"
         # arrox
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAYxIFF+GzkKYyuULadRxhaNl/nIaG9WMT3HAugQgYHm georg@georg-laptop"
+        # nicoo
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcS8jFdZ4qcOPJZVIxufFdrzC4a7+1JIyPHN+YR0ktY nicoo@helium"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICm2hQjb7XmAHq1ZvUyVu9kRcoTrNKppGWTpFDnTCPZj nicoo@xenon"
       ];
     };
   };
