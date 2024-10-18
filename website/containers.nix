@@ -21,4 +21,8 @@ in
 
     config = ./dokuwiki;
   };
+
+  systemd.tmpfiles.rules = [
+    "d /var/lib/dokuwiki 0755 root root -"
+  ];
 }
