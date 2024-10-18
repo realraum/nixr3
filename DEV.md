@@ -1,5 +1,7 @@
 # incus local containers
 
+please replace `CONTAINER`, `TYPE` and `<ip>` accordingly
+
 launch container:
 
 ```bash
@@ -30,7 +32,7 @@ ip a # get ip
 local:
 
 ```bash
-nixos-rebuild --flake .#PFAD --target-host root@<ip> switch -L -v
+nixos-rebuild --flake .#TYPE --target-host root@<ip> switch -L -v
 ```
 
 # deploy from inside container
