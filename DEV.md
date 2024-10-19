@@ -48,7 +48,7 @@ incus config device add r3website nixr3 disk path=/etc/nixos source=$PWD
 container:
 
 ```bash
-nix run --extra-experimental-features 'nix-command flakes' shell nixpkgs#git
+nix --extra-experimental-features 'nix-command flakes' shell nixpkgs#git
 git config --global --add safe.directory /etc/nixos
 git config --global --add safe.directory /etc/nixos/.git
 ```
@@ -56,5 +56,5 @@ git config --global --add safe.directory /etc/nixos/.git
 ## use
 
 ```bash
-nixos-rebuild swtich --flake /etc/nixos#TYPE
+nixos-rebuild switch --flake /etc/nixos#TYPE
 ```
