@@ -50,8 +50,7 @@
 
   # FIXME: Add the rest of your current configuration
 
-  # TODO: Set your hostname
-  networking.hostName = "r3-virt";
+  networking.hostName = "r3virt";
   networking.hostId = "8d4df7ab";
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
