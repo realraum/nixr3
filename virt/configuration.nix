@@ -38,7 +38,7 @@
       matchConfig = {
         Name = "enp1s0";
       };
-      gateway = [ "192.168.127.254" "2a02:3e0:4000:1::1" ];
+      gateway = [ "192.168.127.254" ]; # "2a02:3e0:4000:1::1" ];
       networkConfig = {
         IPv6Forwarding = true;
       };
