@@ -61,6 +61,8 @@ with lib;
     # settings.api.disable_registration
   };
 
+  services.resolved.enable = false;
+  networking.nameservers = [ "1.1.1.1" ];
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
