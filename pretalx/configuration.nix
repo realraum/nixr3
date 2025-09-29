@@ -10,11 +10,15 @@ with lib;
     ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
-  networking.hostName = "r3-acme"; # Define your hostname.
+  networking.hostName = "r3-pretalx"; # Define your hostname.
 
   networking.firewall = {
     allowedUDPPorts = [ 443 ];
     allowedTCPPorts = [ 80 443 ];
+  };
+
+  services.redis = {
+    enable = true;
   };
 
   services.pretalx = {
