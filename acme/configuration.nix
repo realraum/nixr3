@@ -19,12 +19,18 @@ with lib;
       matchConfig = {
         Name = "eth0";
       };
-      gateway = [ "192.168.127.254" "2a02:3e0:4000:1::1" ];
+      # gateway = [ "2a02:3e0:4000:1::1" ];
       networkConfig = {
       };
+      routes = [
+        { routeConfig = {
+          Gateway = "192.168.127.254";
+          GatewayOnLink = true;
+        }; }
+      ];
       addresses = [
-        { addressConfig = { Address = "89.106.211.59/27"; }; }
-        { addressConfig = { Address = "2a02:3e0:4000:1::59/64"; }; }
+        { Address = "89.106.211.59/27"; }
+        { Address = "2a02:3e0:4000:1::59/64"; }
       ];
     };
   };
