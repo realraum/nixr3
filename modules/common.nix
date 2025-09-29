@@ -105,8 +105,9 @@ with lib;
   programs.git.enable = true;
 
   environment.systemPackages = with pkgs; [
-    dstat
+    dool
     tcpdump
+    nload
   ];
 
   programs.screen = {

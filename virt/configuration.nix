@@ -26,6 +26,7 @@
 
   virtualisation.incus.enable = true;
   virtualisation.incus.ui.enable = true;
+  virtualisation.incus.softDaemonRestart = true;
   services.fwupd.enable = true;
 
   networking.useDHCP = mkForce false;

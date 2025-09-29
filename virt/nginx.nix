@@ -25,7 +25,6 @@ with lib;
     recommendedOptimisation = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
-    recommendedZstdSettings = true;
 
     virtualHosts = {
       "parts.realraum.at" = {
