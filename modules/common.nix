@@ -44,6 +44,8 @@ with lib;
         # nicoo
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcS8jFdZ4qcOPJZVIxufFdrzC4a7+1JIyPHN+YR0ktY nicoo@helium"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICm2hQjb7XmAHq1ZvUyVu9kRcoTrNKppGWTpFDnTCPZj nicoo@xenon"
+        # commander
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIkNH3n9zrgcQQ8l/FWnYGeoEPhub4d8MZOnk9KzaIM/ ccomm@ccomm-framework"
       ];
     };
   };
