@@ -17,6 +17,12 @@
     mkg-mod.url = "github:mkg20001/mkg-mod/master";
     mkg-mod.inputs.nixpkgs.follows = "nixpkgs";
 
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    mgit-common.url = "github:mgit-at/nixos-common/master";
+    mgit-common.inputs.nixpkgs.follows = "nixpkgs";
+
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
@@ -28,6 +34,8 @@
     grical-to-mob,
     mkg-mod,
     deckenlichtschalter,
+    disko,
+    mgit-common,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -96,6 +104,15 @@
         modules = [
           mkg-mod.nixosModules.yggdrasil
           ./pretalx/configuration.nix
+        ];
+      };
+
+      mailcow = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [
+          mgit-common.nixosModules.mailcow
+          ./mailcow/configuration.nix
         ];
       };
 

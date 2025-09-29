@@ -20,6 +20,47 @@
         "type": "github"
       }
     },
+    "disko": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1758287904,
+        "narHash": "sha256-IGmaEf3Do8o5Cwp1kXBN1wQmZwQN3NLfq5t4nHtVtcU=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "67ff9807dd148e704baadbd4fd783b54282ca627",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
+    "disko_2": {
+      "inputs": {
+        "nixpkgs": [
+          "mgit-common",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1758287904,
+        "narHash": "sha256-IGmaEf3Do8o5Cwp1kXBN1wQmZwQN3NLfq5t4nHtVtcU=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "67ff9807dd148e704baadbd4fd783b54282ca627",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
     "grical-to-mob": {
       "inputs": {
         "nix-node-package": "nix-node-package",
@@ -56,6 +97,58 @@
         "type": "github"
       }
     },
+    "mgit-common": {
+      "inputs": {
+        "disko": "disko_2",
+        "mgit-exporter": "mgit-exporter",
+        "nix-index-database": "nix-index-database",
+        "nix-unify": "nix-unify",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "patches4nixpkgs": "patches4nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1758488532,
+        "narHash": "sha256-AMDZAE4i+mH2Nqea3pSeKPilihGuKSJY9exa6+CPEi4=",
+        "owner": "mgit-at",
+        "repo": "nixos-common",
+        "rev": "7f961629b8d59264ef5beca226873df88bccea25",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mgit-at",
+        "ref": "master",
+        "repo": "nixos-common",
+        "type": "github"
+      }
+    },
+    "mgit-exporter": {
+      "inputs": {
+        "nixpkgs": [
+          "mgit-common",
+          "nixpkgs"
+        ],
+        "patches4nixpkgs": [
+          "mgit-common",
+          "patches4nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753050291,
+        "narHash": "sha256-bA5prVLvkp0NtMkGYwk0oO7GWBNKoIt3Ht5oq6CFExI=",
+        "owner": "mgit-at",
+        "repo": "prometheus-mgit-exporter",
+        "rev": "aead48040290055e36c8574db4a5ce6d33335afd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mgit-at",
+        "ref": "topic/nixos",
+        "repo": "prometheus-mgit-exporter",
+        "type": "github"
+      }
+    },
     "mkg-mod": {
       "inputs": {
         "nixpkgs": [
@@ -77,6 +170,27 @@
         "type": "github"
       }
     },
+    "nix-index-database": {
+      "inputs": {
+        "nixpkgs": [
+          "mgit-common",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1758427679,
+        "narHash": "sha256-xwjWRJTKDCjQ0iwfh7WhDhgcS0Wt3d1Yscg83mKBCn4=",
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "rev": "fd2569ca2ef7d69f244cd9ffcb66a0540772ff85",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "type": "github"
+      }
+    },
     "nix-node-package": {
       "locked": {
         "lastModified": 1706303050,
@@ -90,6 +204,28 @@
         "owner": "mkg20001",
         "ref": "master",
         "repo": "nix-node-package",
+        "type": "github"
+      }
+    },
+    "nix-unify": {
+      "inputs": {
+        "nixpkgs": [
+          "mgit-common",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1727526428,
+        "narHash": "sha256-Amte8t+ImQ8u5le0wu7LdfYnh0b+HWQ1SpraoBS5zpg=",
+        "owner": "mgit-at",
+        "repo": "nix-unify",
+        "rev": "b60be5ac4b368da503dde176623e5f460a3257d1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mgit-at",
+        "ref": "master",
+        "repo": "nix-unify",
         "type": "github"
       }
     },
@@ -109,11 +245,29 @@
         "type": "github"
       }
     },
+    "patches4nixpkgs": {
+      "locked": {
+        "lastModified": 1713984892,
+        "narHash": "sha256-rPu+gkj3qvjor3vvAFurlonyo03bop8s84fvvtNq5mc=",
+        "owner": "mgit-at",
+        "repo": "patches4nixpkgs",
+        "rev": "24952ef04759d20868efe437bb4a88e8dc0265e3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mgit-at",
+        "ref": "master",
+        "repo": "patches4nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "deckenlichtschalter": "deckenlichtschalter",
+        "disko": "disko",
         "grical-to-mob": "grical-to-mob",
         "hardware": "hardware",
+        "mgit-common": "mgit-common",
         "mkg-mod": "mkg-mod",
         "nixpkgs": "nixpkgs"
       }
