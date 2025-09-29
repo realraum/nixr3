@@ -13,8 +13,8 @@ with lib;
   networking.hostName = "r3-acme"; # Define your hostname.
 
   networking.firewall = {
-    allowedUDPPorts = [ 53 ];
-    allowedTCPPorts = [ 53 ];
+    allowedUDPPorts = [ 443 ];
+    allowedTCPPorts = [ 80 443 ];
   };
 
   services.pretalx = {
