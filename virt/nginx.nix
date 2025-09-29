@@ -32,6 +32,12 @@ with lib;
          forceSSL = true;
          locations."/".proxyPass = "http://10.34.55.51";
       };
+
+      "cfp.realraum.at" = {
+         enableACME = true;
+         forceSSL = true;
+         locations."/".proxyPass = "http://10.34.55.69";
+      };
     };
   };
 }
