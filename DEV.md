@@ -58,3 +58,16 @@ git config --global --add safe.directory /etc/nixos/.git
 ```bash
 nixos-rebuild switch --flake /etc/nixos#TYPE
 ```
+
+# debugging nspawn errors
+
+container:
+systemctl cat container@NIXOSCONTAINER | grep ExecStart=
+
+Copy path
+
+Go to /var/lib/incus/storage-pools/default/containers/CONTAINER/rootfs
+Open nix/store/...
+In exec ...nspawn add: exec env SYSTEMD_LOG_LEVEL=debug ...nspawn
+
+Start container
