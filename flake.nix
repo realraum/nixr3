@@ -111,6 +111,7 @@
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
         modules = [
+          mkg-mod.nixosModules.yggdrasil
           mgit-common.nixosModules.mailcow
           ./mailcow/configuration.nix
         ];

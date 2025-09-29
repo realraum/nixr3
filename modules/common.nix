@@ -22,6 +22,7 @@ with lib;
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
+      inputs.mgit-common.overlays.default
     ];
     # Configure your nixpkgs instance
     config = {

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, modulesPath, ... }:
+{ config, pkgs, lib, modulesPath, inputs, ... }:
 
 with lib;
 
@@ -6,7 +6,6 @@ with lib;
   imports =
     [ # Include the results of the hardware scan.
       ../modules/common.nix
-      ../modules/container.nix
       inputs.mgit-common.nixosModules.hcloud_base
     ];
 
