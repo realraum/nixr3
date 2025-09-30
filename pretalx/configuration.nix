@@ -41,6 +41,10 @@ with lib;
     enable = true;
   };
 
+  systemd.services.pretalx-web.serviceConfig.EnvironmentFile = "/var/lib/pretalx/config";
+  systemd.services.pretalx-worker.serviceConfig.EnvironmentFile = "/var/lib/pretalx/config";
+  systemd.services.pretalx-periodic.serviceConfig.EnvironmentFile = "/var/lib/pretalx/config";
+
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
