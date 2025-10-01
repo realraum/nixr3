@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+CACHEPATH="$HOME/.cache/nix-portable"
+NIXPORTABLE=""
+NIXPORTABLE_OFFLINE="$CACHEPATH/nix-portable-latest"
+
+dl_nix_portable() {
+  # GitHub repo
+  owner="DavHau"
+  repo="nix-portable"
+
+  arch=$(uname -m)
+
+  # Use the GitHub API to get the latest release JSON, filter the asset matching arch and download it
+  download_url=$(curl -s "https://api.github.com/repos/${owner}/${repo}/releases/latest" \
+    | jq -r '.assets[] | select(.name | test("'"${arch}"'"; "i")) | .browser_download_url' \
+    | head -n1)
+
+  if [[ -z "$download_url" ]]; then
+    echo "Error: Could not find a release asset matching architecture '${arch}'." >&2
+    exit 1
+  fi
+
+
+  # Download to local file (extract the file name from URL)
+  filename="$(basename "$download_url")-$(basename "$(dirname "$download_url")")"
+  NIXPORTABLE="$CACHEPATH/$filename"
+  if [ ! -e "$NIXPORTABLE.ok" ]; then
+    echo "Downloading nix-portable from: $download_url"
+    wget "$download_url" -O "$NIXPORTABLE"
+    chmod +x "$NIXPORTABLE"
+    touch "$NIXPORTABLE.ok"
+    ln -sf "$NIXPORTABLE" "$NIXPORTABLE_OFFLINE"
+    echo "Downloaded: $filename"
+  fi
+}
+
+if false; then #if [ -e /nix/store ] || type -Pf nix >/dev/null 2>/dev/null; then
+  # nix is most likely installed, use that
+  exec "$@"
+else
+  # nix is most likely not installed, use nix-portable
+
+  mkdir -p "$CACHEPATH"
+  dl_nix_portable
+  
+  if [ ! -e "$NIXPORTABLE_OFFLINE" ]; then
+    echo "Download failed" >&2
+  fi
+
+  exec "$NIXPORTABLE_OFFLINE" "$(basename "$0")" "$@"
+fi
