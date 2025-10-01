@@ -39,7 +39,7 @@ dl_nix_portable() {
 
 if [ -e /nix/store ] || type -Pf nix >/dev/null 2>/dev/null; then
   # nix is most likely installed, use that
-  exec "$@"
+  exec nix "$@"
 else
   # nix is most likely not installed, use nix-portable
 
@@ -50,5 +50,5 @@ else
     echo "Download failed" >&2
   fi
 
-  exec "$NIXPORTABLE_OFFLINE" "$(basename "$0")" "$@"
+  exec "$NIXPORTABLE_OFFLINE" "nix" "$@"
 fi
