@@ -47,6 +47,8 @@ with lib;
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICm2hQjb7XmAHq1ZvUyVu9kRcoTrNKppGWTpFDnTCPZj nicoo@xenon"
         # commander
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIkNH3n9zrgcQQ8l/FWnYGeoEPhub4d8MZOnk9KzaIM/ ccomm@ccomm-framework"
+        # oli
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINmV+XyoJ84G+giNvFX0Iz336oy0VQkMHt3vH/IB3NK/ oliver@oliver-x220i"
       ];
     };
   };
