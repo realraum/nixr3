@@ -27,4 +27,13 @@ with lib;
       peers = [ "tcp://ygg.mkg20001.io:80" "tls://ygg.mkg20001.io:443" ];
     };
   };
+
+  fileSystems."/nas" = {
+    device = "192.168.69.15:/";
+    fsType = "nfs";
+  };
+  # optional, but ensures rpc-statsd is running for on demand mounting
+  boot.supportedFilesystems = [ "nfs" ];
+
+
 }
