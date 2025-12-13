@@ -107,6 +107,15 @@
         ];
       };
 
+      party = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [
+          mkg-mod.nixosModules.yggdrasil
+          ./party/configuration.nix
+        ];
+      };
+
       mailcow = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
