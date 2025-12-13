@@ -13,6 +13,8 @@ with lib;
   
   security.acme.certs."parts.realraum.at".webroot = mkForce null;
   security.acme.certs."parts.realraum.at".dnsProvider = "acme-dns";
+  security.acme.certs."jellyfin.realraum.at".webroot = mkForce null;
+  security.acme.certs."jellyfin.realraum.at".dnsProvider = "acme-dns";
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
