@@ -7,6 +7,7 @@ with lib;
     [ # Include the results of the hardware scan.
       ../modules/common.nix
       ../modules/container.nix
+      ./jellyfin.nix
     ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
