@@ -8,6 +8,7 @@ with lib;
       ../modules/common.nix
       ../modules/container.nix
       ./jellyfin.nix
+      ./nginx.nix
     ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
