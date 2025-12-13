@@ -20,11 +20,11 @@ in
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
-#  services.nginx.virtualHosts = {
-#    "" = h {
-#      locations."/" = {
-#        proxyPass = "http://localhost:8080/";
-#      };
-#    };
-#  };
+  services.nginx.virtualHosts = {
+    "jellyfin.realraum.at" = h {
+      locations."/" = {
+        proxyPass = "http://localhost:8096/";
+      };
+    };
+  };
 }
