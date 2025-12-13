@@ -29,9 +29,13 @@ with lib;
   };
 
   fileSystems."/nas" = {
-    device = "192.168.69.15:/";
-    fsType = "nfs";
+    device = "maciej@192.168.69.15:/";
+    fsType = "sshfs";
+    options = [
+      "nodev"
+      "noatime"
+      "allow_other"
+      "IdentityFile=/root/.ssh/id_ed25519"
+    ];
   };
-  # optional, but ensures rpc-statsd is running for on demand mounting
-  boot.supportedFilesystems = [ "nfs" ];
 }
