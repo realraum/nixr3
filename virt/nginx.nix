@@ -44,7 +44,7 @@ with lib;
       "jellyfin.realraum.at" = {
          enableACME = true;
          forceSSL = true;
-         locations."/".proxyPass = "http://10.34.55.70";
+         locations."/".proxyPass = "https://10.34.55.70";
       };
     };
   };
