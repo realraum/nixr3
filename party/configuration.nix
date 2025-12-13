@@ -34,6 +34,4 @@ with lib;
   };
   # optional, but ensures rpc-statsd is running for on demand mounting
   boot.supportedFilesystems = [ "nfs" ];
-
-
 }
