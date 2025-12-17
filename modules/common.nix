@@ -113,6 +113,7 @@ with lib;
     dool
     tcpdump
     nload
+    rsync
   ];
 
   programs.screen = {
